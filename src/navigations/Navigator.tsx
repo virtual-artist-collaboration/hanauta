@@ -38,7 +38,7 @@ const RecorderStack = createStackNavigator(
 RecorderStack.navigationOptions = {
   tabBarLabel: 'キロク',
   tabBarIcon: ({focused}: TabProps) => (
-    <TabBarIcon focused={focused} name={'microphone'} />
+    <TabBarIcon focused={focused} name={'mic'} />
   ),
 };
 
@@ -50,7 +50,7 @@ const SampleListStack = createStackNavigator(
 SampleListStack.navigationOptions = {
   tabBarLabel: 'オモイツキ',
   tabBarIcon: ({focused}: TabProps) => (
-    <TabBarIcon focused={focused} name={'list'} />
+    <TabBarIcon focused={focused} name={'queue-music'} />
   ),
 };
 
@@ -62,7 +62,7 @@ const SongListStack = createStackNavigator(
 SongListStack.navigationOptions = {
   tabBarLabel: 'カタチ',
   tabBarIcon: ({focused}: TabProps) => (
-    <TabBarIcon focused={focused} name={'music'} />
+    <TabBarIcon focused={focused} name={'library-music'} />
   ),
 };
 

@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Header} from 'react-native/Libraries/NewAppScreen';
 import {Button, MarginBottom, Time} from '../components';
 import {secondaryColor} from '../consts/colors';
 
@@ -31,7 +30,6 @@ export const RecordScreen = () => {
   }, [isRecording, recordTime]);
   return (
     <View style={styles.container}>
-      <Header />
       <View style={styles.body}>
         <Time ellapsedTime={recordTime} />
         <MarginBottom margin={24} />

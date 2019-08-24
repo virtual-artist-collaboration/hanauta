@@ -13,7 +13,7 @@ import {View, StatusBar, StyleSheet, YellowBox} from 'react-native';
 import {Navigator} from './navigations/Navigator';
 import {setTopLevelNavigator} from './navigations/NavigationService';
 // @ts-ignore
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import {Provider} from 'react-redux';
 import {store} from './store';
 

@@ -3,6 +3,7 @@ import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {weakTextColor} from '../consts/colors';
 import {PlayButton} from './PlayButton';
 import {MarginRight} from './MarginRight';
+import {DownloadButton} from './DownloadButton';
 
 const styles = StyleSheet.create({
   container: {
@@ -14,6 +15,7 @@ const styles = StyleSheet.create({
   },
   title: {fontWeight: 'bold'},
   author: {color: weakTextColor},
+  padding: {flex: 1},
 });
 type Props = {
   title: string;
@@ -37,6 +39,8 @@ export const ListItem = ({title, onPress}: Props) => {
           <Text style={styles.title}>{title}</Text>
           <Text>description</Text>
         </View>
+        <View style={styles.padding} />
+        <DownloadButton onPress={() => {}} />
       </View>
     </TouchableOpacity>
   );

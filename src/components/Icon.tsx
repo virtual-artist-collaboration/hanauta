@@ -1,5 +1,5 @@
 // @ts-ignore
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import FontAwesome from 'react-native-vector-icons/MaterialIcons';
 import React from 'react';
 
 type Props = {

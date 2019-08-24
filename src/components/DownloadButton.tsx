@@ -1,7 +1,7 @@
 import React from 'react';
 import {TouchableOpacity, StyleSheet} from 'react-native';
 import {Icon} from './Icon';
-import {primaryColorLight, white} from '../consts/colors';
+import {transparent, weakTextColor} from '../consts/colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -10,19 +10,18 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: primaryColorLight,
+    backgroundColor: transparent,
   },
 });
 
 type Props = {
   onPress: () => void;
-  isPlaying: boolean;
 };
 
-export const PlayButton = ({onPress, isPlaying}: Props) => {
+export const DownloadButton = ({onPress}: Props) => {
   return (
     <TouchableOpacity onPress={onPress} style={styles.container}>
-      <Icon name={isPlaying ? 'pause' : 'play-arrow'} color={white} />
+      <Icon name={'file-download'} color={weakTextColor} />
     </TouchableOpacity>
   );
 };
