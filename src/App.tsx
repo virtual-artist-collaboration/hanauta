@@ -10,7 +10,8 @@
 
 import React, {Fragment} from 'react';
 import {View, StatusBar, StyleSheet} from 'react-native';
-import {Navigator} from './Navigator';
+import {Navigator} from './navigations/Navigator';
+import {setTopLevelNavigator} from './navigations/NavigationService';
 
 const styles = StyleSheet.create({
   container: {flex: 1},
@@ -21,7 +22,7 @@ const App = () => {
     <Fragment>
       <StatusBar barStyle="dark-content" />
       <View style={styles.container}>
-        <Navigator />
+        <Navigator ref={navigatorRef => setTopLevelNavigator(navigatorRef)} />
       </View>
     </Fragment>
   );
