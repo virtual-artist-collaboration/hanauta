@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Header} from 'react-native/Libraries/NewAppScreen';
-import {Button, Icon, MarginBottom, Time} from '../components';
-import {navigate} from '../navigations/NavigationService';
-import {white, secondaryColor} from '../consts/colors';
+import {Button, MarginBottom, Time} from '../components';
+import {secondaryColor} from '../consts/colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -45,13 +44,4 @@ export const RecordScreen = () => {
       </View>
     </View>
   );
-};
-
-RecordScreen.navigationOptions = () => {
-  return {
-    title: 'ハナウタ',
-    headerRight: (
-      <Icon name="list-ul" onPress={() => navigate('List')} color={white} />
-    ),
-  };
 };
