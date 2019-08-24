@@ -30,7 +30,7 @@ type Props = {
   isRecording: boolean;
 };
 
-export const Button = ({onPress, isRecording}: Props) => {
+export const RecordButton = ({onPress, isRecording}: Props) => {
   return (
     <TouchableOpacity
       onPress={onPress}
