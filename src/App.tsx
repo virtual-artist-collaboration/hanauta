@@ -12,23 +12,27 @@ import React, {Fragment} from 'react';
 import {View, StatusBar, StyleSheet} from 'react-native';
 import {Navigator} from './navigations/Navigator';
 import {setTopLevelNavigator} from './navigations/NavigationService';
+// @ts-ignore
+import Icon from 'react-native-vector-icons/FontAwesome';
+import {Provider} from 'react-redux';
+import {store} from './store';
+
+Icon.loadFont();
 
 const styles = StyleSheet.create({
   container: {flex: 1},
 });
 
-// @ts-ignore
-import Icon from 'react-native-vector-icons/FontAwesome';
-Icon.loadFont();
-
 const App = () => {
   return (
-    <Fragment>
-      <StatusBar barStyle="dark-content" />
-      <View style={styles.container}>
-        <Navigator ref={navigatorRef => setTopLevelNavigator(navigatorRef)} />
-      </View>
-    </Fragment>
+    <Provider store={store}>
+      <Fragment>
+        <StatusBar barStyle="dark-content" />
+        <View style={styles.container}>
+          <Navigator ref={navigatorRef => setTopLevelNavigator(navigatorRef)} />
+        </View>
+      </Fragment>
+    </Provider>
   );
 };
 
