@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Header, Colors} from 'react-native/Libraries/NewAppScreen';
-import {Button, Icon} from '../components';
+import {Button, Icon, MarginBottom, Time} from '../components';
 import {navigate} from '../navigations/NavigationService';
-import {Time} from '../components/Time';
 
 const styles = StyleSheet.create({
   container: {
@@ -20,7 +19,7 @@ const styles = StyleSheet.create({
 
 export const RecordScreen = () => {
   const [isRecording, setRecording] = useState(false);
-  const [recordTime, setRecordTime] = useState(3659);
+  const [recordTime, setRecordTime] = useState(0);
   useEffect(() => {
     const tid = setTimeout(() => {
       if (isRecording) {
@@ -36,7 +35,7 @@ export const RecordScreen = () => {
       <Header />
       <View style={styles.body}>
         <Time ellapsedTime={recordTime} />
-        <View style={{marginBottom: 24}} />
+        <MarginBottom margin={24} />
         <Button
           onPress={() => {
             setRecording(!isRecording);
@@ -50,7 +49,7 @@ export const RecordScreen = () => {
 
 RecordScreen.navigationOptions = () => {
   return {
-    title: 'マイページ',
+    title: 'ハナウタ',
     headerRight: <Icon name="list-ul" onPress={() => navigate('List')} />,
   };
 };
