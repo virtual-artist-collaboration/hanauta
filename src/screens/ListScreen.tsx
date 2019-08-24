@@ -1,15 +1,12 @@
 import React from 'react';
-import {FlatList, View, Text} from 'react-native';
+import {FlatList} from 'react-native';
+import {ListItem} from '../components';
 
 export const ListScreen = () => (
   <FlatList
-    data={[1, 2, 3]}
+    data={['Sample 1', 'Sample 2', 'Sample 3']}
     renderItem={({item}) => {
-      return (
-        <View>
-          <Text>{item}</Text>
-        </View>
-      );
+      return <ListItem title={item} onPress={() => {}} />;
     }}
   />
 );
