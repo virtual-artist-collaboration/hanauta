@@ -1,6 +1,10 @@
-import {createStackNavigator, createAppContainer} from 'react-navigation';
+import {
+  createStackNavigator,
+  createAppContainer,
+  createSwitchNavigator,
+} from 'react-navigation';
 
-import {RecordScreen, ListScreen} from '../screens';
+import {RecordScreen, ListScreen, WelcomeScreen} from '../screens';
 import {primaryColor, white} from '../consts/colors';
 
 const MainStack = createStackNavigator(
@@ -22,4 +26,21 @@ const MainStack = createStackNavigator(
   },
 );
 
-export const Navigator = createAppContainer(MainStack);
+const AuthStack = createStackNavigator(
+  {
+    Welcome: WelcomeScreen,
+  },
+  {
+    initialRouteName: 'Welcome',
+    defaultNavigationOptions: {
+      header: null,
+    },
+  },
+);
+
+const Auth = createSwitchNavigator({
+  Auth: AuthStack,
+  Main: MainStack,
+});
+
+export const Navigator = createAppContainer(Auth);
