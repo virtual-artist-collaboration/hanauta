@@ -8,5 +8,6 @@ export const ListScreen = () => (
     renderItem={({item}) => {
       return <ListItem title={item} onPress={() => {}} />;
     }}
+    keyExtractor={(item, index) => index.toString()}
   />
 );

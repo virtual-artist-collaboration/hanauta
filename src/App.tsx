@@ -9,7 +9,7 @@
  */
 
 import React, {Fragment} from 'react';
-import {View, StatusBar, StyleSheet} from 'react-native';
+import {View, StatusBar, StyleSheet, YellowBox} from 'react-native';
 import {Navigator} from './navigations/Navigator';
 import {setTopLevelNavigator} from './navigations/NavigationService';
 // @ts-ignore
@@ -18,6 +18,8 @@ import {Provider} from 'react-redux';
 import {store} from './store';
 
 Icon.loadFont();
+
+YellowBox.ignoreWarnings(['Module AudioRecorderManager']);
 
 const styles = StyleSheet.create({
   container: {flex: 1},

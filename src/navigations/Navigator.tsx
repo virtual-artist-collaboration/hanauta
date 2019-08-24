@@ -8,9 +8,9 @@ import {
 import {RecordScreen, ListScreen, WelcomeScreen} from '../screens';
 import {primaryColor, white} from '../consts/colors';
 import {navigate} from './NavigationService';
-import {Avatar} from '../components/Avatar';
+
 import React from 'react';
-import TabBarIcon from '../components/TabBarIcon';
+import {Avatar, TabBarIcon} from '../components';
 
 type TabProps = {
   focused: boolean;

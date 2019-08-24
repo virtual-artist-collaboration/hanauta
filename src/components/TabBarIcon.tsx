@@ -7,8 +7,6 @@ interface Props {
   focused: boolean;
 }
 
-const TabBarIcon = ({name, focused}: Props) => (
+export const TabBarIcon = ({name, focused}: Props) => (
   <Icon name={name} color={focused ? primaryColor : shade} />
 );
-
-export default TabBarIcon;

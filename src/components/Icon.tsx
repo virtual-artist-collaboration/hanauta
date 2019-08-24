@@ -6,8 +6,11 @@ type Props = {
   name: string;
   onPress?: () => void;
   color?: string;
+  size?: number;
 };
 
-export const Icon = ({name, onPress, color}: Props) => {
-  return <FontAwesome name={name} onPress={onPress} size={24} color={color} />;
+export const Icon = ({name, onPress, color, size = 20}: Props) => {
+  return (
+    <FontAwesome name={name} onPress={onPress} size={size} color={color} />
+  );
 };
