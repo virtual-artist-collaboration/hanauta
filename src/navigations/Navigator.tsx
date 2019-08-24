@@ -1,6 +1,7 @@
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 
 import {RecordScreen, ListScreen} from '../screens';
+import {primaryColor, white} from '../consts/colors';
 
 const MainStack = createStackNavigator(
   {
@@ -9,6 +10,15 @@ const MainStack = createStackNavigator(
   },
   {
     initialRouteName: 'Record',
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: primaryColor,
+      },
+      headerTintColor: white,
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    },
   },
 );
 

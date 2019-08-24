@@ -27,7 +27,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <Fragment>
-        <StatusBar barStyle="dark-content" />
+        <StatusBar barStyle="light-content" />
         <View style={styles.container}>
           <Navigator ref={navigatorRef => setTopLevelNavigator(navigatorRef)} />
         </View>

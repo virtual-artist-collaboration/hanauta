@@ -10,12 +10,13 @@ const styles = StyleSheet.create({
 type Props = {
   name: string;
   onPress: () => void;
+  color?: string;
 };
 
-export const Icon = ({name, onPress}: Props) => {
+export const Icon = ({name, onPress, color}: Props) => {
   return (
     <TouchableOpacity style={styles.container}>
-      <FontAwesome name={name} onPress={onPress} size={24} />
+      <FontAwesome name={name} onPress={onPress} size={24} color={color} />
     </TouchableOpacity>
   );
 };
