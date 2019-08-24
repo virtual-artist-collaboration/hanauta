@@ -12,6 +12,7 @@ import {white} from '../consts/colors';
 import {largeText} from '../consts/fonts';
 import {MarginBottom} from '../components';
 import {LoginButton} from '../components/LoginButton';
+import {navigate} from '../navigations/NavigationService';
 
 const styles = StyleSheet.create({
   container: {flex: 1, alignItems: 'center'},
@@ -51,7 +52,11 @@ export const WelcomeScreen = () => {
         <MarginBottom margin={24} />
         <Text style={styles.headingText}>思いつきを、カタチにしよう</Text>
         <View style={styles.padding} />
-        <LoginButton onPress={() => {}} />
+        <LoginButton
+          onPress={() => {
+            navigate('Main');
+          }}
+        />
         <MarginBottom margin={48} />
       </SafeAreaView>
     </View>

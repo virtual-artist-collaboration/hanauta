@@ -6,6 +6,9 @@ import {
 
 import {RecordScreen, ListScreen, WelcomeScreen} from '../screens';
 import {primaryColor, white} from '../consts/colors';
+import {navigate} from './NavigationService';
+import {Avatar} from '../components/Avatar';
+import React from 'react';
 
 const MainStack = createStackNavigator(
   {
@@ -17,11 +20,20 @@ const MainStack = createStackNavigator(
     defaultNavigationOptions: {
       headerStyle: {
         backgroundColor: primaryColor,
+        marginRight: 8,
       },
       headerTintColor: white,
       headerTitleStyle: {
         fontWeight: 'bold',
       },
+
+      headerRight: (
+        <Avatar
+          onPress={() => {
+            navigate('Auth');
+          }}
+        />
+      ),
     },
   },
 );
