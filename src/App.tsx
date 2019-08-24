@@ -17,6 +17,10 @@ const styles = StyleSheet.create({
   container: {flex: 1},
 });
 
+// @ts-ignore
+import Icon from 'react-native-vector-icons/FontAwesome';
+Icon.loadFont();
+
 const App = () => {
   return (
     <Fragment>

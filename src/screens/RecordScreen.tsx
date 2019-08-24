@@ -1,8 +1,7 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
-
+import {StyleSheet, View} from 'react-native';
 import {Header, Colors} from 'react-native/Libraries/NewAppScreen';
-import {Button} from '../components/Button';
+import {Button, Icon} from '../components';
 import {navigate} from '../navigations/NavigationService';
 
 const styles = StyleSheet.create({
@@ -32,6 +31,6 @@ export const RecordScreen = () => {
 RecordScreen.navigationOptions = () => {
   return {
     title: 'マイページ',
-    headerRight: <Text onPress={() => navigate('List')}>ToList</Text>,
+    headerRight: <Icon name="list-ul" onPress={() => navigate('List')} />,
   };
 };

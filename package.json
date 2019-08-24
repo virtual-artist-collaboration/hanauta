@@ -13,9 +13,11 @@
     "react": "16.8.6",
     "react-native": "0.60.5",
     "react-native-audio": "^4.3.0",
+    "react-native-elements": "^1.1.0",
     "react-native-gesture-handler": "^1.4.1",
     "react-native-reanimated": "^1.2.0",
     "react-native-sound": "^0.11.0",
+    "react-native-vector-icons": "^6.6.0",
     "react-navigation": "^3.12.0"
   },
   "devDependencies": {
@@ -25,6 +27,7 @@
     "@types/jest": "^24.0.18",
     "@types/react": "^16.9.2",
     "@types/react-native": "^0.60.8",
+    "@types/react-native-vector-icons": "^6.4.1",
     "@types/react-test-renderer": "^16.9.0",
     "babel-jest": "^24.9.0",
     "eslint": "^6.2.2",
