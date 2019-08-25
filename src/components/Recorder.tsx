@@ -1,6 +1,7 @@
 import {AudioRecorder, AudioUtils} from 'react-native-audio';
 import React, {useState, useEffect} from 'react';
 import {View, StyleSheet} from 'react-native';
+import Sound from 'react-native-sound';
 import {RecordButton} from './RecordButton';
 import {Time} from './Time';
 import {MarginBottom} from './MarginBottom';
@@ -101,6 +102,33 @@ export const Recorder = () => {
     }
   };
 
+  const play = async () => {
+    if (isRecording) {
+      console.log('play: still recording');
+      return;
+    }
+
+    // These timeouts are a hacky workaround for some issues with react-native-sound.
+    // See https://github.com/zmxv/react-native-sound/issues/89.
+    setTimeout(() => {
+      var sound = new Sound(audioPath, '', error => {
+        if (error) {
+          console.log('failed to load the sound', error);
+        }
+      });
+
+      setTimeout(() => {
+        sound.play(success => {
+          if (success) {
+            console.log('successfully finished playing');
+          } else {
+            console.log('playback failed due to audio decoding errors');
+          }
+        });
+      }, 100);
+    }, 100);
+  };
+
   const onPress = () => {
     if (isRecording) {
       stop();
@@ -119,6 +147,7 @@ export const Recorder = () => {
           <View style={styles.buttonContainer}>
             <PlayButton
               onPlay={() => {
+                play();
                 setPlaying(true);
               }}
               onPause={() => {
