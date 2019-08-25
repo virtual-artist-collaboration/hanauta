@@ -59,8 +59,8 @@ const styles = StyleSheet.create({
     borderBottomColor: '#000000',
     justifyContent: 'center',
     width: width * 0.9,
+    maxHeight: 30,
     borderBottomWidth: 1,
-    maxHeight: 150,
     fontSize: normalText,
   },
 });
@@ -81,8 +81,6 @@ export const UploadForm = () => {
       <TextInput
         style={styles.textInputDesc}
         blurOnSubmit={false}
-        numberOfLines={5}
-        multiline={true}
         value={description}
         onChangeText={setDescription}
       />
