@@ -8,3 +8,4 @@ export * from './Recorder';
 export * from './RecordButton';
 export * from './TabBarIcon';
 export * from './Time';
+export * from './UploadButton';

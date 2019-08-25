@@ -1,7 +1,7 @@
 import React from 'react';
 import {TouchableOpacity, StyleSheet} from 'react-native';
 import {Icon} from './Icon';
-import {primaryColorLight, white} from '../consts/colors';
+import {shade} from '../consts/colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -10,27 +10,18 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: primaryColorLight,
+    backgroundColor: shade,
   },
 });
 
 type Props = {
-  onPlay: () => void;
-  onPause: () => void;
-  isPlaying: boolean;
+  onPress: () => void;
 };
 
-export const PlayButton = ({onPlay, onPause, isPlaying}: Props) => {
-  const onPress = () => {
-    if (isPlaying) {
-      onPause();
-      return;
-    }
-    onPlay();
-  };
+export const UploadButton = ({onPress}: Props) => {
   return (
     <TouchableOpacity onPress={onPress} style={styles.container}>
-      <Icon name={isPlaying ? 'pause' : 'play-arrow'} color={white} />
+      <Icon name={'file-upload'} />
     </TouchableOpacity>
   );
 };
