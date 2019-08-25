@@ -29,8 +29,11 @@ export const ListItem = ({title, onPress}: Props) => {
       <View style={styles.container}>
         <PlayButton
           isPlaying={isPlaying}
-          onPress={() => {
-            setPlaying(!isPlaying);
+          onPlay={() => {
+            setPlaying(true);
+          }}
+          onPause={() => {
+            setPlaying(false);
           }}
         />
         <MarginRight margin={16} />

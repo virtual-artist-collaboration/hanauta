@@ -15,11 +15,19 @@ const styles = StyleSheet.create({
 });
 
 type Props = {
-  onPress: () => void;
+  onPlay: () => void;
+  onPause: () => void;
   isPlaying: boolean;
 };
 
-export const PlayButton = ({onPress, isPlaying}: Props) => {
+export const PlayButton = ({onPlay, onPause, isPlaying}: Props) => {
+  const onPress = () => {
+    if (isPlaying) {
+      onPause();
+      return;
+    }
+    onPlay();
+  };
   return (
     <TouchableOpacity onPress={onPress} style={styles.container}>
       <Icon name={isPlaying ? 'pause' : 'play-arrow'} color={white} />
