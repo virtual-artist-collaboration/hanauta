@@ -15,14 +15,22 @@ const styles = StyleSheet.create({
   },
   title: {fontWeight: 'bold'},
   author: {color: weakTextColor},
-  padding: {flex: 1},
+  content: {flex: 1},
 });
-type Props = {
+
+type Sample = {
+  description: string;
   title: string;
+  url: string;
+  user_name: string;
+};
+
+type Props = {
+  sample: Sample;
   onPress: () => void;
 };
 
-export const ListItem = ({title, onPress}: Props) => {
+export const ListItem = ({sample, onPress}: Props) => {
   const [isPlaying, setPlaying] = useState(false);
   return (
     <TouchableOpacity onPress={onPress}>
@@ -37,12 +45,11 @@ export const ListItem = ({title, onPress}: Props) => {
           }}
         />
         <MarginRight margin={16} />
-        <View>
-          <Text style={styles.author}>naturalclar</Text>
-          <Text style={styles.title}>{title}</Text>
-          <Text>description</Text>
+        <View style={styles.content}>
+          <Text style={styles.author}>{sample.user_name}</Text>
+          <Text style={styles.title}>{sample.title}</Text>
+          <Text>{sample.description}</Text>
         </View>
-        <View style={styles.padding} />
         <DownloadButton onPress={() => {}} />
       </View>
     </TouchableOpacity>
