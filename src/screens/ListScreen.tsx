@@ -8,16 +8,21 @@ type Sample = {
   title: string;
   url: string;
   user_name: string;
+  id: string;
 };
 
 export const ListScreen = () => {
   const [samples, setSamples] = useState<Sample[]>([]);
-  useEffect(() => {
+  const fetch = () => {
     getList().then(({data}: {data: Sample[]}) => {
       setSamples(data);
     });
-    console.log(samples);
-  }, [samples]);
+  }
+
+  useEffect(() => {
+    fetch()
+  }, []);
+
 
   return (
     <FlatList
@@ -25,7 +30,9 @@ export const ListScreen = () => {
       renderItem={({item}) => {
         return <ListItem sample={item} />;
       }}
-      keyExtractor={(item, index) => index.toString()}
+      keyExtractor={(item) => item.id}
+      onRefresh={fetch}
+      refreshing={false}
     />
   );
 };
