@@ -107,7 +107,6 @@ export const Recorder = () => {
       console.log('play: still recording');
       return;
     }
-
     // These timeouts are a hacky workaround for some issues with react-native-sound.
     // See https://github.com/zmxv/react-native-sound/issues/89.
     setTimeout(() => {
