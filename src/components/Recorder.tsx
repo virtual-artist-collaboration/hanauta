@@ -42,6 +42,7 @@ const prepareRecordingPath = () => {
 export const Recorder = () => {
   const [isRecording, setRecording] = useState(false);
   const [isAuthorized, setAuthorized] = useState(false);
+  const [sound, setSound] = useState<any>(null);
   // 録音が終了したかのフラグ
   const [isFinished, setFinished] = useState(false);
   const [currentTime, setTime] = useState(0);
@@ -77,6 +78,7 @@ export const Recorder = () => {
       console.log('record:already recording');
       return;
     }
+    prepareRecordingPath();
     try {
       await AudioRecorder.startRecording();
       setRecording(true);
@@ -97,6 +99,13 @@ export const Recorder = () => {
     try {
       const filePath = await AudioRecorder.stopRecording();
       console.log(filePath);
+      setSound(
+        new Sound(audioPath, '', error => {
+          if (error) {
+            console.log('failed to load the sound', error);
+          }
+        }),
+      );
       return filePath;
     } catch (error) {
       console.error(error);
@@ -108,25 +117,26 @@ export const Recorder = () => {
       console.log('play: still recording');
       return;
     }
-    // These timeouts are a hacky workaround for some issues with react-native-sound.
-    // See https://github.com/zmxv/react-native-sound/issues/89.
-    setTimeout(() => {
-      var sound = new Sound(audioPath, '', error => {
-        if (error) {
-          console.log('failed to load the sound', error);
-        }
-      });
 
-      setTimeout(() => {
-        sound.play(success => {
-          if (success) {
-            console.log('successfully finished playing');
-          } else {
-            console.log('playback failed due to audio decoding errors');
-          }
-        });
-      }, 100);
-    }, 100);
+    if (!sound) {
+      console.log('play: no sound');
+      return;
+    }
+    sound.play((success: boolean) => {
+      if (success) {
+        console.log('successfully finished playing');
+      } else {
+        console.log('playback failed due to audio decoding errors');
+      }
+    });
+  };
+
+  const stopPlay = () => {
+    if (!sound) {
+      console.log('stopPlay: no sound');
+      return;
+    }
+    sound.stop();
   };
 
   const onPress = () => {
@@ -151,6 +161,7 @@ export const Recorder = () => {
                 setPlaying(true);
               }}
               onPause={() => {
+                stopPlay();
                 setPlaying(false);
               }}
               isPlaying={isPlaying}
