@@ -9,3 +9,4 @@ export * from './RecordButton';
 export * from './TabBarIcon';
 export * from './Time';
 export * from './UploadButton';
+export * from './UploadForm';
