@@ -3,7 +3,7 @@ import {FlatList} from 'react-native';
 import {ListItem} from '../components';
 import {getList} from '../api';
 
-type Samples = {
+type Sample = {
   description: string;
   title: string;
   url: string;
@@ -11,9 +11,9 @@ type Samples = {
 };
 
 export const ListScreen = () => {
-  const [samples, setSamples] = useState<Samples[]>([]);
+  const [samples, setSamples] = useState<Sample[]>([]);
   useEffect(() => {
-    getList().then(({data}: {data: Samples[]}) => {
+    getList().then(({data}: {data: Sample[]}) => {
       setSamples(data);
     });
   }, []);
