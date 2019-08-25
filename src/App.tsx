@@ -8,7 +8,7 @@
  * @format
  */
 
-import React, {Fragment} from 'react';
+import React, {Fragment, useEffect} from 'react';
 import {View, StatusBar, StyleSheet, YellowBox} from 'react-native';
 import {Navigator} from './navigations/Navigator';
 import {setTopLevelNavigator} from './navigations/NavigationService';
@@ -16,6 +16,7 @@ import {setTopLevelNavigator} from './navigations/NavigationService';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {Provider} from 'react-redux';
 import {store} from './store';
+import Permissions from 'react-native-permissions';
 
 Icon.loadFont();
 
@@ -26,6 +27,15 @@ const styles = StyleSheet.create({
 });
 
 const App = () => {
+  useEffect(() => {
+    Permissions.request('microphone').then(response => {
+      // Returns once the user has chosen to 'allow' or to 'not allow' access
+      // Response is one of: 'authorized', 'denied', 'restricted', or 'undetermined'
+      if (response !== 'authorized') {
+        console.log('microphone not authorized');
+      }
+    });
+  }, []);
   return (
     <Provider store={store}>
       <Fragment>
