@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {View, StyleSheet, Text} from 'react-native';
 import {weakTextColor} from '../consts/colors';
 import {PlayButton} from './PlayButton';
 import {MarginRight} from './MarginRight';
@@ -28,20 +28,20 @@ type Sample = {
 
 type Props = {
   sample: Sample;
-  onPress: () => void;
 };
 
-export const ListItem = ({sample, onPress}: Props) => {
+export const ListItem = ({sample}: Props) => {
   const [isPlaying, setPlaying] = useState(false);
   const [sound, setSound] = useState<any>(null);
   useEffect(() => {
+    console.log(sample.url);
     const temp = new Sound(sample.url, '', error => {
       if (error) {
         console.log('failed to load the sound', error);
       }
     });
     setSound(temp);
-  }, [sample.url]);
+  }, []);
   const play = () => {
     if (!sample.url) {
       return null;
@@ -73,25 +73,23 @@ export const ListItem = ({sample, onPress}: Props) => {
   };
 
   return (
-    <TouchableOpacity onPress={onPress}>
-      <View style={styles.container}>
-        <PlayButton
-          isPlaying={isPlaying}
-          onPlay={() => {
-            play();
-          }}
-          onPause={() => {
-            stop();
-          }}
-        />
-        <MarginRight margin={16} />
-        <View style={styles.content}>
-          <Text style={styles.author}>{sample.user_name}</Text>
-          <Text style={styles.title}>{sample.title}</Text>
-          <Text>{sample.description}</Text>
-        </View>
-        <DownloadButton onPress={() => {}} />
+    <View style={styles.container}>
+      <PlayButton
+        isPlaying={isPlaying}
+        onPlay={() => {
+          play();
+        }}
+        onPause={() => {
+          stop();
+        }}
+      />
+      <MarginRight margin={16} />
+      <View style={styles.content}>
+        <Text style={styles.author}>{sample.user_name}</Text>
+        <Text style={styles.title}>{sample.title}</Text>
+        <Text>{sample.description}</Text>
       </View>
-    </TouchableOpacity>
+      <DownloadButton onPress={() => {}} />
+    </View>
   );
 };
