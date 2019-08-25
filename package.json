@@ -10,11 +10,13 @@
     "android": "react-native run-android"
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.6.1",
     "react": "16.8.6",
     "react-native": "0.60.5",
     "react-native-audio": "^4.3.0",
     "react-native-elements": "^1.1.0",
     "react-native-gesture-handler": "^1.4.1",
+    "react-native-permissions": "^1.2.0",
     "react-native-reanimated": "^1.2.0",
     "react-native-sound": "^0.11.0",
     "react-native-vector-icons": "^6.6.0",
@@ -30,6 +32,7 @@
     "@types/react": "^16.9.2",
     "@types/react-native": "^0.60.8",
     "@types/react-native-audio": "^4.3.0",
+    "@types/react-native-permissions": "^1.1.1",
     "@types/react-native-vector-icons": "^6.4.1",
     "@types/react-redux": "^7.1.2",
     "@types/react-test-renderer": "^16.9.0",

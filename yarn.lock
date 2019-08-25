@@ -837,6 +837,11 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
+"@react-native-community/async-storage@^1.6.1":
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/@react-native-community/async-storage/-/async-storage-1.6.1.tgz#19be07fc1d65c77bdeb20f46108ba12076aad1c5"
+  integrity sha512-1WA28xfdhG+unkTEk/lXnqI2izv6belo0CYw7UdvaeHm8TIYT6eTmIIdGR7oiCa2xSKEnaPQqRMH6h7gyLNbww==
+
 "@react-native-community/cli-platform-android@^2.6.0", "@react-native-community/cli-platform-android@^2.9.0":
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/@react-native-community/cli-platform-android/-/cli-platform-android-2.9.0.tgz#28831e61ce565a2c7d1905852fce1eecfd33cb5e"
@@ -1036,6 +1041,11 @@
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/@types/react-native-audio/-/react-native-audio-4.3.0.tgz#60d238fef64a332d7c18abaecc2f9dc60085f966"
   integrity sha512-ihxfzdDECMa+BCo33VDoLDDkm66ETZ2uL0E3CaLXyJyOmVOVHGsz24iaDRQjyeqPzYZhuqiRc6PV/0qvRgohqQ==
+
+"@types/react-native-permissions@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@types/react-native-permissions/-/react-native-permissions-1.1.1.tgz#297f39ed19234045e1dc1cd0abd85b86bdf9c606"
+  integrity sha512-+xLVH6kefg9hpJKxQhRcaYHckhbQCxDrU6HEaTzf3gMbn4I4aunjxkqeSMAofrHFNOnOS/phnsTbifoDATjk3w==
 
 "@types/react-native-vector-icons@^6.4.1":
   version "6.4.1"
@@ -5360,6 +5370,11 @@ react-native-gesture-handler@^1.4.1:
     hoist-non-react-statics "^2.3.1"
     invariant "^2.2.4"
     prop-types "^15.7.2"
+
+react-native-permissions@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-permissions/-/react-native-permissions-1.2.0.tgz#0deb616bf1565c17c91f1cb1f953809b2892c29e"
+  integrity sha512-+KrP1JZ30RI9p30wsGlGQx22qwiClDnznSQZPpvBMkOIZQ9kXOkLAFXS+vwiHRiiRu/pBMBXYHfI7ng6t2+LbQ==
 
 react-native-ratings@^6.3.0:
   version "6.3.1"
