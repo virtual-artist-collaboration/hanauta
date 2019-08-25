@@ -31,3 +31,18 @@ export const postFormData = async (path: string, params: object) => {
 export const getList = async () => {
   return get('list_music.php');
 };
+
+export const postRecording = async (recordingPath: string) => {
+  console.log(recordingPath);
+  const file = {
+    uri: `file://${recordingPath}`,
+    name: 'recording.aac',
+    type: 'audio/aac',
+  };
+  const formData = new FormData();
+  formData.append('user_name', 'naturalclar');
+  formData.append('description', '僕が考えた最高のリフ');
+  formData.append('title', `最高のリフ${Math.floor(Math.random() * 100)}`);
+  formData.append('file', file);
+  return postFormData('upload.php', formData);
+};

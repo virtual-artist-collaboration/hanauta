@@ -16,13 +16,14 @@ export const ListScreen = () => {
     getList().then(({data}: {data: Sample[]}) => {
       setSamples(data);
     });
-  }, []);
+    console.log(samples);
+  }, [samples]);
 
   return (
     <FlatList
       data={samples}
       renderItem={({item}) => {
-        return <ListItem sample={item} onPress={() => {}} />;
+        return <ListItem sample={item} />;
       }}
       keyExtractor={(item, index) => index.toString()}
     />
