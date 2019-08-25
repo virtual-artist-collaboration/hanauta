@@ -7,7 +7,7 @@ import {Time} from './Time';
 import {MarginBottom} from './MarginBottom';
 import {PlayButton} from './PlayButton';
 import {UploadButton} from './UploadButton';
-import {postRecording} from '../api';
+import {navigate} from '../navigations/NavigationService';
 let audioPath = AudioUtils.DocumentDirectoryPath + '/recording.aac';
 
 const styles = StyleSheet.create({
@@ -164,7 +164,7 @@ export const Recorder = () => {
           <View style={styles.buttonContainer}>
             <UploadButton
               onPress={() => {
-                postRecording(audioPath);
+                navigate('Upload');
               }}
             />
           </View>

@@ -10,7 +10,7 @@ import {primaryColor, white} from '../consts/colors';
 import {navigate} from './NavigationService';
 
 import React from 'react';
-import {Avatar, TabBarIcon} from '../components';
+import {Avatar, TabBarIcon, UploadForm} from '../components';
 
 type TabProps = {
   focused: boolean;
@@ -31,7 +31,10 @@ const MainNavigationOptions = {
 };
 
 const RecorderStack = createStackNavigator(
-  {Record: {screen: RecordScreen, navigationOptions: {title: 'キロク'}}},
+  {
+    Record: {screen: RecordScreen, navigationOptions: {title: 'キロク'}},
+    Upload: {screen: UploadForm, navigationOptions: {title: '投稿'}},
+  },
   {defaultNavigationOptions: MainNavigationOptions},
 );
 
