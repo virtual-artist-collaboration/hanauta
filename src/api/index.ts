@@ -3,7 +3,7 @@ import axios from 'axios';
 const host = 'https://virtual-artist-collaboration.herokuapp.com/';
 
 export const api = (path: string, params: object) => {
-  return axios(`${host}${path}`, params);
+  return axios(`${host}/${path}`, params);
 };
 
 export const get = async (path: string, params?: object) => {
@@ -17,6 +17,14 @@ export const post = async (path: string, params?: object) => {
   return api(path, {
     method: 'POST',
     params,
+  });
+};
+
+export const postFormData = async (path: string, params: object) => {
+  return api(path, {
+    method: 'POST',
+    config: {headers: {'Content-Type': 'multipart/form-data'}},
+    data: params,
   });
 };
 
